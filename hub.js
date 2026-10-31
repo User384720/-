@@ -167,7 +167,7 @@
       eintraege: [
         { name: "Retro Bowl", url: "https://poki.com/de/g/retro-bowl", tag: "Sport", text: "American-Football-Manager im 8-Bit-Gewand: Kader zusammenstellen, Spielzüge ansagen und die Saison gewinnen." },
         { name: "Slope", url: "https://www.y8.com/games/slope", tag: "Action", text: "Endlos-Runner auf einer sich neigenden Bahn. Tempo steigt, Reaktionszeit entscheidet über den nächsten Versuch.", embed: "https://www.y8.com/embed/slope" },
-        { name: "1v1.LOL", url: "https://1v1.lol/", tag: "Action", text: "Bau-Shooter-Duell im Browser: Gebäude setzen, Deckung nutzen, Gegner im direkten Duell ausschalten." },
+        { name: "1v1.LOL", url: "https://gms.parcoil.com/1v1lol/", tag: "Action", text: "Bau-Shooter-Duell im Browser: Gebäude setzen, Deckung nutzen, Gegner im direkten Duell ausschalten." },
         { name: "Drift Hunters", url: "https://drifthunters.io/", tag: "Sport", text: "Drift-Simulation mit Tuning, Streckenwahl und Punktesystem. Fahrzeug aufbauen, Kurven halten, Combos verlängern." },
         { name: "Tunnel Rush", url: "https://www.y8.com/games/tunnel_rush", tag: "Action", text: "Schneller Bahnflug durch einen rotierenden Tunnel. Hindernissen ausweichen, Geschwindigkeit steigern, Highscore halten.", embed: "https://www.y8.com/embed/tunnel_rush" },
         { name: "Paper.io 2", url: "https://paper-io.com/", tag: ".io", text: "Flächen erobern, Gebiet schließen und Gegner abschneiden. Klassisches Gebietsrennen im Mehrspielermodus." },
