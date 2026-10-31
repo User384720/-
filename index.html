@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toolwerk &ndash; digitale Werkzeuge und Ratgeber</title>
+<meta name="description" content="Toolwerk bündelt frei zugängliche Web-Werkzeuge für Rechnen, Recherche, Sprache und Wissenschaft – direkt im Browser nutzbar, ergänzt um praktische Ratgeber.">
+<meta name="robots" content="index, follow">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="school-body">
+
+<div class="school-page">
+
+  <!-- ================= Kopfbereich ================= -->
+  <div class="school-header">
+    <div class="school-header-inner">
+      <div class="school-brand">
+        <span class="school-brand-mark">TW</span>
+      </div>
+      <div class="school-title">
+        <h1>Toolwerk</h1>
+        <p>Digitale Werkzeuge und Ratgeber &middot; ohne Konto, ohne Installation</p>
+      </div>
+      <div class="school-header-meta">
+        <span class="clock" id="clock">--:--:--</span>
+        <span id="today">Datum wird geladen</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Hauptnavigation ================= -->
+  <div class="school-nav">
+    <ul>
+      <li><a href="#start" data-nav="start">Startseite</a></li>
+      <li><a href="#werkzeuge" data-nav="werkzeuge">Werkzeuge</a></li>
+      <li><a href="#ratgeber" data-nav="ratgeber">Ratgeber</a></li>
+      <li><a href="#ueber" data-nav="ueber">Über</a></li>
+      <a href="secret.html">
+    <button type="button">Datei öffnen</button>
+</a>
+
+    </ul>
+  </div>
+
+  <!-- ================= Brotkrumen ================= -->
+  <div class="school-crumb">
+    Sie befinden sich hier: <a href="#start"><strong>Startseite</strong></a> &nbsp;&gt;&nbsp;
+    <span id="crumb-area">Übersicht</span>
+    <span class="status">9 Werkzeuge &middot; 6 Ratgeber &middot; Stand 10/2026</span>
+  </div>
+
+  <!-- ================= Layout ================= -->
+  <table class="school-layout">
+    <tbody>
+      <tr>
+
+        <!-- ---------------- Sidebar ---------------- -->
+        <td class="school-sidebar">
+
+          <div class="box">
+            <h2>Werkzeuge</h2>
+            <div class="box-body">
+              <p style="font-size:11px; color:#5a6a7a; margin-bottom:8px;">
+                Werkzeug auswählen &ndash; die Anwendung wird direkt im Hauptbereich geöffnet.
+              </p>
+              <div id="tool-nav">
+                <!-- wird aus SCHOOL_DATA aufgebaut -->
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <h2>Ratgeber</h2>
+            <div class="box-body" id="article-nav">
+              <!-- wird aus ARTICLES aufgebaut -->
+            </div>
+          </div>
+
+          <div class="notice-mini">
+            <strong>Zur Einbettung</strong>
+            Einzelne Anbieter verhindern die Anzeige innerhalb fremder Seiten. In diesem Fall
+            führt der Link oben im Rahmen direkt zum Werkzeug.
+          </div>
+
+        </td>
+
+        <!-- ---------------- Hauptbereich ---------------- -->
+        <td class="school-main">
+
+          <!-- ============ Ansicht: Startseite ============ -->
+          <div id="view-home">
+
+            <h2 class="page-title">Werkzeuge für jeden Tag</h2>
+            <p class="page-subtitle">
+              Bereich: <span>Übersicht</span> &middot; alle Werkzeuge laufen im Browser &middot;
+              keine Anmeldung erforderlich
+            </p>
+
+            <div class="info-panel">
+              <p><strong>Willkommen bei Toolwerk.</strong> Diese Seite bündelt frei zugängliche
+              Web-Anwendungen für Rechnen, Recherche, Sprache und Wissenschaft und öffnet sie
+              direkt in einem eingebetteten Fenster &ndash; ohne Installation und ohne Konto.</p>
+              <p>Die Ratgeber erklären, wie die Werkzeuge sinnvoll eingesetzt werden: von der
+              Funktionsanalyse über Quellenprüfung bis zur Textüberarbeitung.</p>
+            </div>
+
+            <h3 class="section-head" id="sec-werkzeuge">Alle Werkzeuge</h3>
+            <div class="tool-grid" id="home-tools">
+              <!-- wird aus SCHOOL_DATA aufgebaut -->
+            </div>
+
+            <h3 class="section-head" id="sec-artikel">Ratgeber</h3>
+            <div class="article-list" id="home-articles">
+              <!-- wird aus ARTICLES aufgebaut -->
+            </div>
+
+            <div class="info-panel" id="ueber" style="margin-top:20px;">
+              <p><strong>Über Toolwerk</strong></p>
+              <p>Toolwerk ist eine unabhängige Sammlung frei verfügbarer Web-Werkzeuge. Die
+              Anwendungen selbst werden von ihren jeweiligen Anbietern betrieben; für Inhalte,
+              Verfügbarkeit und Datenverarbeitung dort ist der Anbieter verantwortlich.</p>
+              <p>Auf dieser Seite werden keine Konten angelegt, keine Eingaben gespeichert und
+              keine Werbe- oder Analyse-Cookies gesetzt. Externe Werkzeuge können beim Aufruf
+              eigene Cookies setzen &ndash; die Datenschutzhinweise des jeweiligen Anbieters gelten
+              entsprechend.</p>
+              <p>Korrekturhinweise und Vorschläge für weitere Werkzeuge sind willkommen:
+              redaktion@toolwerk.example</p>
+            </div>
+
+          </div>
+
+          <!-- ============ Ansicht: Werkzeug ============ -->
+          <div id="view-tool" style="display:none;">
+
+            <h2 class="page-title" id="tool-title">Werkzeug</h2>
+            <p class="page-subtitle">
+              Bereich: <span id="tool-category">Kategorie</span>
+            </p>
+
+            <div class="tool-desc" id="tool-desc"></div>
+
+            <div class="frame-toolbar">
+              <span>Externe Anwendung (iframe)</span>
+              <span class="frame-tools">
+                <span class="hint" id="frame-hint">Einbettung wird geladen &hellip;</span>
+                <a class="frame-open-btn" id="tool-open-link" href="#" target="_blank"
+                   rel="noopener noreferrer" title="Werkzeug in einem neuen Browser-Tab öffnen">
+                  In neuem Tab &ouml;ffnen &nearr;
+                </a>
+              </span>
+            </div>
+
+            <div class="frame-wrap">
+              <div class="frame-loading" id="frame-loading">Verbindung zum Anbieter wird hergestellt &hellip;</div>
+              <iframe id="tool-frame" title="Eingebettete Web-Anwendung" src="about:blank"
+                      referrerpolicy="no-referrer" loading="lazy" allowfullscreen></iframe>
+            </div>
+
+            <p class="frame-note">
+              Bleibt der Rahmen leer, untersagt der Anbieter die Einbettung. Nutzen Sie in diesem
+              Fall die Schaltfl&auml;che <em>&bdquo;In neuem Tab &ouml;ffnen&ldquo;</em> rechts &uuml;ber dem Rahmen.
+            </p>
+
+            <p class="frame-note">
+              <a href="#start">&laquo; Zurück zur Übersicht</a>
+            </p>
+
+          </div>
+
+          <!-- ============ Ansicht: Artikel ============ -->
+          <div id="view-article" style="display:none;">
+            <h2 class="page-title" id="article-title">Artikel</h2>
+            <p class="page-subtitle" id="article-meta"></p>
+            <p class="article-lead" id="article-lead"></p>
+            <div class="article-body" id="article-body"></div>
+            <p class="frame-note">
+              <a href="#start">&laquo; Zurück zur Übersicht</a>
+            </p>
+          </div>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ================= Fußbereich ================= -->
+  <div class="school-footer">
+    <div class="links">
+      <a href="#start">Startseite</a>
+      <a href="#werkzeuge">Werkzeuge</a>
+      <a href="#ratgeber">Ratgeber</a>
+      <a href="#ueber">Über das Projekt</a>
+      <a href="#ueber">Datenschutz</a>
+      <a href="#ueber">Impressum</a>
+    </div>
+    <div class="legal">
+      &copy; 2026 Toolwerk &middot; Version 2.0 &middot; Letzte Aktualisierung: 30.10.2026 &middot;
+      Eingebundene Anwendungen sind Angebote Dritter.
+    </div>
+  </div>
+
+</div>
+
+<script src="data-index.js"></script>
+<script>
+/* =============================================================
+   index.html – Steuerung des Portals
+   Liest SCHOOL_DATA und ARTICLES aus data-index.js.
+   ============================================================= */
+(function () {
+  "use strict";
+
+  var toolNav    = document.getElementById("tool-nav");
+  var articleNav = document.getElementById("article-nav");
+  var homeTools  = document.getElementById("home-tools");
+  var homeArts   = document.getElementById("home-articles");
+
+  var viewHome   = document.getElementById("view-home");
+  var viewTool   = document.getElementById("view-tool");
+  var viewArt    = document.getElementById("view-article");
+
+  var elToolTitle = document.getElementById("tool-title");
+  var elToolCat   = document.getElementById("tool-category");
+  var elToolOpen  = document.getElementById("tool-open-link");
+  var elToolDesc  = document.getElementById("tool-desc");
+  var elFrame     = document.getElementById("tool-frame");
+  var elHint      = document.getElementById("frame-hint");
+  var elLoading   = document.getElementById("frame-loading");
+
+  var elArtTitle  = document.getElementById("article-title");
+  var elArtMeta   = document.getElementById("article-meta");
+  var elArtLead   = document.getElementById("article-lead");
+  var elArtBody   = document.getElementById("article-body");
+
+  var elCrumb     = document.getElementById("crumb-area");
+
+  var currentToolId = null;
+
+  /* ---------- Hilfsfunktionen ---------- */
+
+  function esc(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+
+  function findTool(id) {
+    return SCHOOL_DATA.filter(function (t) { return t.id === id; })[0] || null;
+  }
+
+  function findArticle(id) {
+    return ARTICLES.filter(function (a) { return a.id === id; })[0] || null;
+  }
+
+  function groupByCategory(items) {
+    var order = [];
+    var map = {};
+    items.forEach(function (item) {
+      if (!map[item.category]) {
+        map[item.category] = [];
+        order.push(item.category);
+      }
+      map[item.category].push(item);
+    });
+    return { order: order, map: map };
+  }
+
+  function setActive(container, attribute, id) {
+    var links = container.querySelectorAll("a[" + attribute + "]");
+    for (var i = 0; i < links.length; i++) {
+      if (links[i].getAttribute(attribute) === id) {
+        links[i].classList.add("active");
+      } else {
+        links[i].classList.remove("active");
+      }
+    }
+  }
+
+  /* ---------- Uhr ---------- */
+
+  function tick() {
+    var now = new Date();
+    var two = function (n) { return n < 10 ? "0" + n : String(n); };
+    document.getElementById("clock").textContent =
+      two(now.getHours()) + ":" + two(now.getMinutes()) + ":" + two(now.getSeconds());
+  }
+
+  function setDateLine() {
+    var now = new Date();
+    var days = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+    document.getElementById("today").textContent =
+      days[now.getDay()] + ", " + now.getDate() + "." + (now.getMonth() + 1) + "." + now.getFullYear();
+  }
+
+  /* ---------- Sidebar ---------- */
+
+  function buildToolNav() {
+    var grouped = groupByCategory(SCHOOL_DATA);
+    var html = "";
+
+    grouped.order.forEach(function (category) {
+      html += '<div class="tool-group-label">' + esc(category) + "</div>";
+      html += '<ul class="tool-list">';
+      grouped.map[category].forEach(function (tool) {
+        html += '<li><a href="#' + esc(tool.id) + '" data-tool-id="' + esc(tool.id) + '">' +
+                esc(tool.name) + "</a></li>";
+      });
+      html += "</ul>";
+    });
+
+    toolNav.innerHTML = html;
+  }
+
+  function buildArticleNav() {
+    var html = '<ul class="tool-list">';
+    ARTICLES.forEach(function (article) {
+      html += '<li><a href="#' + esc(article.id) + '" data-article-id="' + esc(article.id) + '">' +
+              esc(article.title) + "</a></li>";
+    });
+    html += "</ul>";
+    articleNav.innerHTML = html;
+  }
+
+  /* ---------- Startseite ---------- */
+
+  function buildHome() {
+    homeTools.innerHTML = SCHOOL_DATA.map(function (tool) {
+      return (
+        '<a class="tool-card" href="#' + esc(tool.id) + '" data-tool-id="' + esc(tool.id) + '">' +
+          '<span class="card-head">' + esc(tool.category) + "</span>" +
+          "<h4>" + esc(tool.name) + "</h4>" +
+          "<p>" + esc(tool.description) + "</p>" +
+          '<span class="card-link">Werkzeug öffnen &raquo;</span>' +
+        "</a>"
+      );
+    }).join("");
+
+    homeArts.innerHTML = ARTICLES.map(function (article) {
+      return (
+        '<div class="article-item">' +
+          '<p class="meta">' + esc(article.category) + " &middot; " + esc(article.date) +
+            " &middot; Lesezeit " + esc(article.readingTime) + "</p>" +
+          "<h4>" + esc(article.title) + "</h4>" +
+          "<p>" + esc(article.teaser) + "</p>" +
+          '<a class="more" href="#' + esc(article.id) + '" data-article-id="' + esc(article.id) + '">Weiterlesen &raquo;</a>' +
+        "</div>"
+      );
+    }).join("");
+  }
+
+  /* ---------- Ansichten ---------- */
+
+  function showView(name) {
+    viewHome.style.display = name === "home" ? "" : "none";
+    viewTool.style.display = name === "tool" ? "" : "none";
+    viewArt.style.display  = name === "article" ? "" : "none";
+    if (name !== "home") { window.scrollTo(0, 0); }
+  }
+
+  function showHome(scrollTarget) {
+    showView("home");
+    elCrumb.textContent = "Übersicht";
+    document.title = "Toolwerk – digitale Werkzeuge und Ratgeber";
+    setActive(toolNav, "data-tool-id", null);
+    setActive(articleNav, "data-article-id", null);
+
+    if (scrollTarget) {
+      var target = document.getElementById(scrollTarget);
+      if (target) {
+        window.setTimeout(function () {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 20);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }
+
+  function openTool(id) {
+    var tool = findTool(id);
+    if (!tool) { return; }
+
+    currentToolId = tool.id;
+
+    showView("tool");
+    setActive(toolNav, "data-tool-id", tool.id);
+    setActive(articleNav, "data-article-id", null);
+
+    elCrumb.textContent = "Werkzeuge \u203A " + tool.name;
+    document.title = tool.name + " – Toolwerk";
+
+    elToolTitle.textContent = tool.name;
+    elToolCat.textContent = tool.category;
+    elToolOpen.href = tool.url;
+    elToolDesc.textContent = tool.description;
+
+    var nextSrc = tool.embed || tool.url;
+    if (elFrame.getAttribute("src") === nextSrc) {
+      elLoading.style.display = "none";
+      elHint.textContent = "Verbunden";
+    } else {
+      elHint.textContent = "Einbettung wird geladen \u2026";
+      elLoading.style.display = "";
+      elFrame.src = nextSrc;
+    }
+
+    if (window.innerWidth <= 760) {
+      document.getElementById("tool-desc").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function openArticle(id) {
+    var article = findArticle(id);
+    if (!article) { return; }
+
+    currentToolId = null;
+
+    showView("article");
+    setActive(toolNav, "data-tool-id", null);
+    setActive(articleNav, "data-article-id", article.id);
+
+    elCrumb.textContent = "Ratgeber \u203A " + article.title;
+    document.title = article.title + " – Toolwerk";
+
+    elArtTitle.textContent = article.title;
+    elArtMeta.textContent = article.category + " \u00B7 " + article.date +
+      " \u00B7 Lesezeit " + article.readingTime;
+    elArtLead.textContent = article.teaser;
+
+    elArtBody.innerHTML = article.sections.map(function (section) {
+      var out = "";
+      if (section.title) {
+        out += "<h3>" + esc(section.title) + "</h3>";
+      }
+      (section.paragraphs || []).forEach(function (text) {
+        out += "<p>" + esc(text) + "</p>";
+      });
+      if (section.bullets && section.bullets.length) {
+        out += "<ul>" + section.bullets.map(function (item) {
+          return "<li>" + esc(item) + "</li>";
+        }).join("") + "</ul>";
+      }
+      return out;
+    }).join("");
+
+    window.scrollTo(0, 0);
+  }
+
+  /* ---------- Navigation ---------- */
+
+  var SECTION_TARGETS = {
+    start: null,
+    werkzeuge: "sec-werkzeuge",
+    ratgeber: "sec-artikel",
+    ueber: "ueber"
+  };
+
+  function route() {
+    var hash = decodeURIComponent(window.location.hash.replace("#", ""));
+
+    if (!hash) { showHome(); return; }
+
+    if (Object.prototype.hasOwnProperty.call(SECTION_TARGETS, hash)) {
+      showHome(SECTION_TARGETS[hash]);
+      return;
+    }
+
+    if (findTool(hash)) { openTool(hash); return; }
+    if (findArticle(hash)) { openArticle(hash); return; }
+
+    showHome();
+  }
+
+  function handleClick(event) {
+    var link = event.target.closest("a[data-tool-id], a[data-article-id]");
+    if (!link) { return; }
+    event.preventDefault();
+    if (link.hasAttribute("data-tool-id")) {
+      window.location.hash = link.getAttribute("data-tool-id");
+    } else {
+      window.location.hash = link.getAttribute("data-article-id");
+    }
+  }
+
+  elFrame.addEventListener("load", function () {
+    elLoading.style.display = "none";
+    var tool = currentToolId ? findTool(currentToolId) : null;
+    elHint.textContent = tool ? "Verbunden" : "Bereit";
+  });
+
+  window.addEventListener("hashchange", route);
+  document.addEventListener("click", handleClick);
+
+  /* ---------- Start ---------- */
+
+  buildToolNav();
+  buildArticleNav();
+  buildHome();
+  setDateLine();
+  tick();
+  window.setInterval(tick, 1000);
+  route();
+})();
+</script>
+</body>
+</html>
